@@ -1,0 +1,8 @@
+{
+  "name": "loykrathong-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix loykrathong",
+    "preview": "npm run preview --prefix loykrathong"
+  }
+}

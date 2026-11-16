@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ลอยกระทงออนไลน์</title>
+  <meta name="description" content="ลอยกระทงและปล่อยโคมลอยออนไลน์ เลือกกระทงน่ารัก เขียนคำอธิษฐาน แล้วแชร์ให้เพื่อน">
+  <meta name="theme-color" content="#0B1A33">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F4C46A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4c2 2.5 3 5 3 8s-1.5 5.5-3 8c-1.5-2.5-3-5-3-8s1-5.5 3-8Z'/%3E%3Cpath d='M12 20c-3-1-7-3-8-8 2.5 0 4.5 1 6 2.5'/%3E%3Cpath d='M12 20c3-1 7-3 8-8-2.5 0-4.5 1-6 2.5'/%3E%3Cpath d='M4 21h16'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-view="home">
+  <!-- ฉากหลัง: ท้องฟ้า พระจันทร์ แม่น้ำ -->
+  <div id="scene" aria-hidden="false">
+    <div class="sky"><div class="stars" id="stars"></div><div class="meteors" id="meteors"></div><div class="moon"></div><canvas class="fireworks" id="fireworks"></canvas><div class="city" id="city"></div></div>
+    <div class="hanging" id="hanging" aria-hidden="true"></div>
+    <div class="sky-items" id="skyItems"></div>
+    <div class="river">
+      <div class="city-reflect" id="cityReflect"></div>
+      <div class="moon-reflect"></div>
+      <div class="wave" style="top:2%"></div>
+      <div class="wave w2" style="top:34%"></div>
+      <div class="wave w3" style="top:68%"></div>
+      <div class="river-items" id="riverItems"></div>
+      <div class="lilies" id="lilies" aria-hidden="true"></div>
+    </div>
+    <div class="fireflies" id="fireflies" aria-hidden="true"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="logo" href="#/"><i data-ic="lotus"></i><span>ลอยกระทงออนไลน์</span></a>
+    <div class="counters">
+      <span class="pill" id="pillP" title="จำนวนผู้ร่วมลอย" hidden><i data-ic="users"></i><span class="lbl">ผู้ร่วมลอย</span><b id="cntP">-</b><span class="lbl">คน</span></span>
+      <span class="pill" title="จำนวนกระทงที่ลอยแล้ว"><i data-ic="lotus"></i><span class="lbl">กระทง</span><b id="cntK">-</b></span>
+      <span class="pill" title="จำนวนโคมที่ปล่อยแล้ว"><i data-ic="lantern"></i><span class="lbl">โคมลอย</span><b id="cntL">-</b></span>
+    </div>
+  </header>
+
+  <main id="view" aria-live="polite"></main>
+
+  <div class="ticker" id="ticker" role="region" aria-label="คำอธิษฐานล่าสุด" hidden><div class="tk-track" id="tkTrack"></div></div>
+
+  <footer class="foot">
+    <i data-ic="leaf"></i><span>ลอยกระทงออนไลน์ ลดขยะ รักษ์แม่น้ำ</span>
+    <span class="mode" id="mode" hidden>โหมดทดลอง: เก็บข้อมูลในเครื่องนี้</span>
+  </footer>
+
+  <button type="button" class="sound-btn" id="soundBtn" aria-pressed="false" hidden></button>
+  <button type="button" class="star-btn" id="starBtn"><i data-ic="star"></i><span>ขอพรดาวตก</span></button>
+
+  <div class="popup" id="popup" hidden></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
