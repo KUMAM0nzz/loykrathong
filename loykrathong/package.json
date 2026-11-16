@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite --open",
+    "build": "node build.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
